@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List | Stay Organized</title>
+    <meta name="description" content="A beautiful, simple todo list to keep you organized and productive.">
+    <meta property="og:title" content="Todo List App" />
+    <meta property="og:description" content="A beautiful, simple todo list to keep you organized and productive." />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="header">
+            <h1>My Tasks</h1>
+            <p class="subtitle">Stay focused, get things done</p>
+        </header>
+
+        <main class="main-content">
+            <div class="todo-card">
+                <form id="todo-form" class="todo-form">
+                    <input type="text" id="todo-input" class="todo-input" placeholder="What needs to be done?"
+                        autocomplete="off" required>
+                    <button type="submit" class="add-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                </form>
+
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+
+                <ul id="todo-list" class="todo-list"></ul>
+
+                <div id="todo-footer" class="todo-footer">
+                    <span id="items-left" class="items-left">0 items left</span>
+                    <button id="clear-completed" class="clear-btn">Clear completed</button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Double-click to edit a task</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
