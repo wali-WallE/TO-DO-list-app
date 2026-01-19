@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 1rem;
+    color: hsl(220, 25%, 20%);
+    background: linear-gradient(135deg, hsl(25, 100%, 95%) 0%, hsl(340, 80%, 92%) 100%);
+    min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+input {
+    font-family: inherit;
+    border: none;
+    outline: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: slideDown 0.6s ease;
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    color: hsl(220, 15%, 50%);
+    font-size: 0.875rem;
+}
+
+.main-content {
+    width: 100%;
+    max-width: 520px;
+    animation: slideUp 0.6s ease;
+}
+
+.todo-card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 12px 40px hsla(220, 25%, 20%, 0.12);
+    overflow: hidden;
+}
+
+.todo-form {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    border-bottom: 1px solid hsl(220, 20%, 92%);
+}
+
+.todo-input {
+    flex: 1;
+    font-size: 1rem;
+    color: hsl(220, 25%, 20%);
+    padding: 1rem;
+    background: hsl(240, 70%, 95%);
+    border-radius: 0.75rem;
+    transition: 200ms ease;
+}
+
+.todo-input::placeholder {
+    color: hsl(220, 10%, 65%);
+}
+
+.todo-input:focus {
+    background: white;
+    box-shadow: inset 0 0 0 2px hsl(240, 70%, 60%);
+}
