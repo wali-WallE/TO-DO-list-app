@@ -295,3 +295,18 @@ ul {
     border-radius: 0.375rem;
     transition: 150ms ease;
 }
+
+.clear-btn:hover {
+    color: hsl(0, 70%, 55%);
+    background: hsl(0, 70%, 95%);
+}
+
+.footer {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.footer p {
+    font-size: 0.75rem;
+    color: hsl(220, 10%, 65%);
+}
