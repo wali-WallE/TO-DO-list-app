@@ -112,29 +112,7 @@
             render();
         }
 
-        function deleteTodo(id) {
-            const todoItem = document.querySelector(`[data-id="${id}"]`);
-            if (todoItem) {
-                todoItem.classList.add('removing');
-                setTimeout(() => {
-                    todos = todos.filter(todo => todo.id !== id);
-                    render();
-                }, 300);
-            }
-        }
 
-        function updateTodo(id, newText) {
-            const trimmedText = newText.trim();
-            if (!trimmedText) {
-                deleteTodo(id);
-                return;
-            }
-            
-            todos = todos.map(todo =>
-                todo.id === id ? { ...todo, text: trimmedText } : todo
-            );
-            render();
-        }
 
 
 
