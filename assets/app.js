@@ -112,6 +112,42 @@
             render();
         }
 
+        function deleteTodo(id) {
+    const todoItem = document.querySelector(`[data-id="${id}"]`);
+    
+    if (todoItem) {
+        todoItem.classList.add('removing');
+    }
+
+    setTimeout(() => {
+        if (Array.isArray(todos)) {
+            todos = todos.filter(todo => todo && todo.id !== id);
+            
+            if (typeof render === 'function') render();
+        }
+    }, 300);
+}
+
+function updateTodo(id, newText) {
+    const trimmedText = (newText || "").toString().trim();
+
+    if (!trimmedText) {
+        deleteTodo(id);
+        return;
+    }
+    
+    if (Array.isArray(todos)) {
+        todos = todos.map(todo => {
+            if (todo && todo.id === id) {
+                return { ...todo, text: trimmedText };
+            }
+            return todo;
+        });
+        
+        if (typeof render === 'function') render();
+    }
+}
+
 
 
 
