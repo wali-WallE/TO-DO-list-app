@@ -158,6 +158,37 @@ function updateTodo(id, newText) {
             }, 300);
         }
 
+    function startEditing(li, todo) {
+        const todoText = li.querySelector('.todo-text');
+        todoText.setAttribute('contenteditable', 'true');
+        todoText.classList.add('editing');
+        todoText.focus();
+            
+        const range = document.createRange();
+        range.selectNodeContents(todoText);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+            
+    function finishEditing() {
+        todoText.setAttribute('contenteditable', 'false');
+        todoText.classList.remove('editing');
+        updateTodo(todo.id, todoText.textContent);
+    }
+            
+    todoText.addEventListener('blur', finishEditing, { once: true });
+    todoText.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            todoText.blur();
+        }
+        if (e.key === 'Escape') {
+            todoText.textContent = todo.text;
+            todoText.blur();
+        }
+    });
+    } 
+
 
 
 
