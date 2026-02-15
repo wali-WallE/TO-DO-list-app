@@ -148,6 +148,17 @@ function updateTodo(id, newText) {
     }
 }
 
+    function clearCompleted() {
+        const completedItems = document.querySelectorAll('.todo-item.completed');
+        completedItems.forEach(item => item.classList.add('removing'));
+            
+        setTimeout(() => {
+            todos = todos.filter(todo => !todo.completed);
+            render();
+            }, 300);
+        }
+
+
 
 
 
