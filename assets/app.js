@@ -189,6 +189,28 @@ function updateTodo(id, newText) {
     });
     } 
 
+    
+    function setFilter(filter) {
+        currentFilter = filter;
+        filterBtns.forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.filter === filter);
+        });
+        render();
+    }
+
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    todoForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        addTodo(todoInput.value);
+        todoInput.value = '';
+        todoInput.focus();
+    });
+
 
 
 
