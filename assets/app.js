@@ -211,6 +211,22 @@ function updateTodo(id, newText) {
         todoInput.focus();
     });
 
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => setFilter(btn.dataset.filter));
+    });
+
+    clearCompletedBtn.addEventListener('click', clearCompleted);
+
+    document.addEventListener('keydown', (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
+            if (document.activeElement !== todoInput) {
+                todoInput.focus();
+            }
+        }
+    });
+
+    render();
+
 
 
 
